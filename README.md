@@ -1,66 +1,98 @@
-#Todo List Application
-Setup and Start Instructions
+
+# Todo List Application Setup and Start Instructions
+
 This is a Todo List application built with React on the frontend and Node.js with Express and PostgreSQL on the backend.
 
-Prerequisites
+## Prerequisites
+
 Before running the application, make sure you have the following installed:
 
-Node.js and npm (Node Package Manager)
-PostgreSQL
+- Node.js and npm (Node Package Manager)
+- PostgreSQL
 
-#Backend Setup
-1. Clone the repository:
+## Backend Setup
 
-git clone 'https://github.com/AbhayGupta007/To-Do_List.git'
-cd To-Do_List
+1. **Clone the repository:**
 
-2. Navigate to the backend directory:
-cd backend
+   \`\`\`bash
+   git clone https://github.com/AbhayGupta007/To-Do_List.git
+   cd To-Do_List
+   \`\`\`
 
-3. Install backend dependencies:
-npm install
+2. **Navigate to the backend directory:**
 
-#Set up PostgreSQL:
+   \`\`\`bash
+   cd backend
+   \`\`\`
 
-1. Create a PostgreSQL database named todo_app.
+3. **Install backend dependencies:**
 
-2. In the database create a table named tasks: 
-CREATE TABLE tasks(
-	id SERIAL PRIMARY KEY, 
-	title VARCHAR(255) NOT NULL, 
-	completed BOOLEAN DEFAULT FALSE
-);
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-3. Update the database connection details in backend/server.js:
+4. **Set up PostgreSQL:**
 
-const db = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'todo_app',
-  password: 'your_password',
-  port: 5432,
-});
+   - Create a PostgreSQL database named \`todo_app\`.
+   - In the database, create a table named \`tasks\`:
 
-4. Start the backend server:
-nodemon server.js
+     \`\`\`sql
+     CREATE TABLE tasks (
+       id SERIAL PRIMARY KEY,
+       title VARCHAR(255) NOT NULL,
+       completed BOOLEAN DEFAULT FALSE
+     );
+     \`\`\`
 
-The backend server will start running at http://localhost:5000.
+   - Update the database connection details in \`backend/server.js\`:
 
-#Frontend Setup
-1. Navigate to the frontend directory in different terminal:
+     \`\`\`javascript
+     const db = new pg.Client({
+       user: 'postgres',
+       host: 'localhost',
+       database: 'todo_app',
+       password: 'your_password',
+       port: 5432,
+     });
+     \`\`\`
 
-cd ../frontend
+5. **Start the backend server:**
 
-2. Install frontend dependencies:
-npm install
+   \`\`\`bash
+   nodemon server.js
+   \`\`\`
 
-3. Start the frontend development server:
+   The backend server will start running at \`http://localhost:5000\`.
 
-npm run dev
+## Frontend Setup
 
-The frontend server will start running at http://localhost:3000.
+1. **Navigate to the frontend directory in a different terminal:**
 
-#Using the Application
-Open your web browser and navigate to http://localhost:3000.
-You should see the Todo List application interface.
-Use the application to view tasks, add new tasks, mark tasks as completed, delete tasks, and download the task list as a PDF.
+   \`\`\`bash
+   cd ../frontend
+   \`\`\`
+
+2. **Install frontend dependencies:**
+
+   \`\`\`bash
+   npm install
+   \`\`\`
+
+3. **Start the frontend development server:**
+
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+
+   The frontend server will start running at \`http://localhost:3000\`.
+
+## Using the Application
+
+1. **Open your web browser** and navigate to \`http://localhost:3000\`.
+2. You should see the Todo List application interface.
+3. Use the application to:
+   - View tasks
+   - Add new tasks
+   - Mark tasks as completed
+   - Delete tasks
+   - Download the task list as a PDF
